@@ -1,0 +1,22 @@
+ -- CREACION TABLESPACE SIN PUNTO Y COMA
+create tablespace mid_term
+datafile 'C:\Parcial\Higuita.dbf' size 25M
+
+-- CREACION PERFIL SIN PUNTO Y COMA
+create profile Exam   
+limit sessions_per_user  1
+idle_time  10
+FAILED_LOGIN_ATTEMPTS  4
+
+ -- CREACION USUARIO SIN PUNTO Y COMA
+ create user ejercicios
+identified by ejercicios
+default tablespace mid_term
+quota unlimited on mid_term
+profile Exam
+
+GRANT connect TO ejercicios
+grant DBA TO ejercicios
+grant create any procedure to ejercicios
+
+
